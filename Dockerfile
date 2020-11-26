@@ -68,7 +68,9 @@ RUN apk add -U --no-cache \
 && pip install --upgrade pip \
 && pip install -r $CYPHON_HOME/requirements.txt \
 && apk del build-deps \
-&& python -m nltk.downloader -d /usr/local/share/nltk_data punkt wordnet 
+
+
+RUN python -m nltk.downloader -d /usr/local/share/nltk_data punkt wordnet 
 
 # create unprivileged user
 RUN addgroup -S -g $GID cyphon && adduser -S -G cyphon -u $UID cyphon
