@@ -67,7 +67,7 @@ RUN apk add -U --no-cache \
       tiff-dev \
 && pip install --upgrade pip \
 && pip install -r $CYPHON_HOME/requirements.txt \
-&& apk del build-deps \
+&& apk del build-deps 
 
 
 RUN python -m nltk.downloader -d /usr/local/share/nltk_data punkt wordnet 
